@@ -232,10 +232,44 @@ body {
   margin: 0 auto;
 }
 
+/* ===== ツールバー（件数 ＋ 登録ボタン） ===== */
+.properties-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .properties-count {
   font-size: 0.875rem;
   color: #718096;
-  margin-bottom: 1rem;
+}
+
+.btn-add {
+  padding: 0.5rem 1.25rem;
+  background: #38a169;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: #2f855a;
+}
+
+/* ===== 物件なしのときのメッセージ ===== */
+.empty-message {
+  text-align: center;
+  color: #718096;
+  font-size: 0.95rem;
+  padding: 3rem 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px dashed #e2e8f0;
 }
 
 .properties-grid {
@@ -308,6 +342,131 @@ body {
   font-size: 0.875rem;
   color: #4a5568;
   margin-top: 0.4rem;
+}
+
+/* ===== 物件カードの編集・削除ボタン ===== */
+.property-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #edf2f7;
+}
+
+.btn-edit {
+  flex: 1;
+  padding: 0.4rem;
+  background: transparent;
+  color: #4299e1;
+  border: 1.5px solid #4299e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-edit:hover {
+  background: #4299e1;
+  color: #ffffff;
+}
+
+.btn-delete {
+  flex: 1;
+  padding: 0.4rem;
+  background: transparent;
+  color: #e53e3e;
+  border: 1.5px solid #e53e3e;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-delete:hover {
+  background: #e53e3e;
+  color: #ffffff;
+}
+
+/* ===== モーダルオーバーレイ ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+.modal-form .form-group select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  background: #f7fafc;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23718096' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.modal-form .form-group select:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+  background-color: #ffffff;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 0.7rem;
+  background: transparent;
+  color: #718096;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #f7fafc;
+}
+
+.modal-buttons .btn-primary {
+  flex: 1;
+  margin-top: 0;
 }
 
 /* ===== レスポンシブ対応 ===== */
