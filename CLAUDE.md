@@ -8,20 +8,49 @@
 
 | カテゴリ | ツール・バージョン |
 |---------|-----------------|
-| フレームワーク | （未定 / 決まり次第更新） |
-| ビルドツール | （未定） |
-| 言語 | JavaScript / HTML / CSS |
+| フレームワーク | React 19 |
+| ビルドツール | Vite 6 |
+| 言語 | JavaScript (JSX) |
+| 認証・バックエンド | Supabase |
+| ルーティング | React Router v7 |
 | デプロイ | GitHub Pages（予定） |
 
-> **補足**: 技術スタックが確定したらこのセクションを更新してください。
+### 主要な依存関係
+
+```json
+"dependencies":    { "react": "^19", "react-dom": "^19", "react-router-dom": "^7", "@supabase/supabase-js": "^2" }
+"devDependencies": { "vite": "^6", "@vitejs/plugin-react": "^4" }
+```
+
+### ディレクトリ構成
+
+```
+src/
+├── components/   # 再利用可能なUIコンポーネント（PropertyCard など）
+├── pages/        # 画面単位のコンポーネント（LoginPage, PropertiesPage など）
+├── lib/          # 外部サービス連携（supabase.js）
+├── App.jsx       # ルーティング設定
+├── main.jsx      # エントリーポイント
+└── index.css     # グローバルスタイル
+```
+
+## 環境変数
+
+`.env` ファイルに以下を設定する（`.gitignore` で管理対象外）。
+`.env.example` を参考に各自で作成すること。
+
+```
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
 
 ## 開発コマンド
 
 ```bash
-# 以下はセットアップ後に確定させてください
 npm install      # 依存関係のインストール
-npm run dev      # 開発サーバー起動
+npm run dev      # 開発サーバー起動 (http://localhost:5173)
 npm run build    # 本番ビルド
+npm run preview  # ビルド結果のプレビュー
 ```
 
 ## Git 運用ルール
