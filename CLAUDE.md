@@ -13,7 +13,7 @@
 | 言語 | JavaScript (JSX) |
 | 認証・バックエンド | Supabase |
 | ルーティング | React Router v7 |
-| デプロイ | GitHub Pages（予定） |
+| デプロイ | Vercel |
 
 ### 主要な依存関係
 
@@ -99,6 +99,11 @@ docs: READMEにセットアップ手順を追加
 | `fix/` | バグ修正 |
 | `refactor/` | リファクタリング |
 | `docs/` | ドキュメント修正 |
+
+## デプロイ情報
+
+- **本番URL**：https://realestate-app-cyan.vercel.app/
+- **Supabase プロジェクト名**：realestate-app
 
 ## ファイル・フォルダ命名規則
 
